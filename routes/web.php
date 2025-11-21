@@ -32,6 +32,24 @@ Route::middleware(['auth', 'verified', 'SuperAdmin'])
     ->group(function () {
         Route::get('/dashboard', [SuperAdminController::class, 'SuperAdminDashboard'])
             ->name('dashboard');
+
+        Route::get('/users', [SuperAdminController::class, 'users'])
+            ->name('users');
+
+        Route::get('/admins', [SuperAdminController::class, 'admins'])
+            ->name('admins');
+
+        Route::get('/roles', [SuperAdminController::class, 'roles'])
+            ->name('roles');
+
+        Route::get('/settings', [SuperAdminController::class, 'settings'])
+            ->name('settings');
+
+        Route::get('/logs', [SuperAdminController::class, 'logs'])
+            ->name('logs');
+
+               Route::get('/analytics', [SuperAdminController::class, 'analytics'])
+            ->name('analytics');
     });
 
 // Admin — Full section
@@ -64,4 +82,4 @@ Route::middleware(['auth', 'verified', 'User'])
             ->name('dashboard');
     });
 
-require __DIR__.'/settings.php';
+require __DIR__ . '/settings.php';
