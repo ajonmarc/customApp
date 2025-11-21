@@ -20,4 +20,21 @@ class UserController extends Controller
 
         return Inertia::render('user/Dashboard', []);
     }
+
+        public function profile()
+    {
+        return Inertia::render('user/Profile');
+    }
+
+    
+        public function orders()
+    {
+        return Inertia::render('user/Orders');
+    }
+
+    
+        public function support()
+    {
+        return Inertia::render('user/Support');
+    }
 }

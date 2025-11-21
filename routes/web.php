@@ -48,7 +48,7 @@ Route::middleware(['auth', 'verified', 'SuperAdmin'])
         Route::get('/logs', [SuperAdminController::class, 'logs'])
             ->name('logs');
 
-               Route::get('/analytics', [SuperAdminController::class, 'analytics'])
+        Route::get('/analytics', [SuperAdminController::class, 'analytics'])
             ->name('analytics');
     });
 
@@ -80,6 +80,15 @@ Route::middleware(['auth', 'verified', 'User'])
     ->group(function () {
         Route::get('/dashboard', [UserController::class, 'UserDashboard'])
             ->name('dashboard');
+
+        Route::get('/profile', [UserController::class, 'profile'])
+            ->name('profile');
+
+        Route::get('/orders', [UserController::class, 'orders'])
+            ->name('orders');
+
+        Route::get('/support', [UserController::class, 'support'])
+            ->name('support');
     });
 
 require __DIR__ . '/settings.php';
