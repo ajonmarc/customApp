@@ -34,13 +34,26 @@ Route::middleware(['auth', 'verified', 'SuperAdmin'])
             ->name('dashboard');
     });
 
-// Admin
+// Admin — Full section
 Route::middleware(['auth', 'verified', 'Admin'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
+
         Route::get('/dashboard', [AdminController::class, 'AdminDashboard'])
             ->name('dashboard');
+
+        Route::get('/users', [AdminController::class, 'users'])
+            ->name('users');
+
+        Route::get('/content', [AdminController::class, 'content'])
+            ->name('content');
+
+        Route::get('/reports', [AdminController::class, 'reports'])
+            ->name('reports');
+
+        Route::get('/settings', [AdminController::class, 'settings'])
+            ->name('settings');
     });
 
 // User

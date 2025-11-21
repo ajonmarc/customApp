@@ -2,22 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
 use Inertia\Inertia;
-use Illuminate\Support\Facades\Auth;
-
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class AdminController extends Controller
 {
     public function AdminDashboard()
     {
+        return Inertia::render('admin/Dashboard');
+    }
 
+    public function users()
+    {
+        return Inertia::render('admin/Users');
+    }
 
-        return Inertia::render('admin/Dashboard', []);
+    public function content()
+    {
+        return Inertia::render('admin/Content');
+    }
+
+    public function reports()
+    {
+        return Inertia::render('admin/Reports');
+    }
+
+    public function settings()
+    {
+        return Inertia::render('admin/Settings');
     }
 }
